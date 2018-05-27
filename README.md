@@ -1,4 +1,4 @@
-# y
+# enter/registration
 
 > A Vue.js project
 
