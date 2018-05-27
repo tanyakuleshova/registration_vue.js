@@ -6,7 +6,7 @@
         </div>
         <div class="form-group">
             <label for="password">Ваш пароль:</label>
-            <input type="password" class="form-control" id="password" placeholder="Введите пароль:" required v-model="user.password">
+            <input type="password" class="form-control" id="password" placeholder="Введите пароль (от 6 символов):" required v-model="user.password">
         </div>
         <div class="form-group">
             <label for="password2">Повтрите пароль:</label>

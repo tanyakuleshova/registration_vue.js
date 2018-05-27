@@ -8,8 +8,11 @@
             <label for="password">Ваш пароль:</label>
             <input type="password" class="form-control" id="password" placeholder="Введите пароль:" required v-model="user.password">
         </div>
-        
+        <div class="alert alert-danger" role="alert" v-if="error2">
+            <strong>Ой!</strong>Неверно указана почта или пароль.
+        </div>
         <button type="submit" class="btn btn-primary">Войти</button>
+        
     </form>
 </template>
 <script>
@@ -19,8 +22,9 @@
             user: {
                 email:  '',
                 password: ''
-                }
-            }  
+                },
+            error2: false
+            }
         },
         methods: {
             enterUser(){
@@ -35,8 +39,16 @@
                         }
                         this.$emit('addUser', sett);
                     })
+                    .catch(response => {
+                        if(Error){
+                            this.error2 = true;
+                        }
+                    })
+                    
                     
             }
         }
+        
     }
+    
 </script>
